@@ -138,7 +138,7 @@ host: "10.1.0.4:5601" <----- change line #1806
 - save file
 - run 'ansible-playbook filebeat-playbook.yml
 -
--![photo of successfull filebeat playbook](Images/filebeat-playbook ansible.png)
+-![photo of successfull filebeat playbook](Images/filebeat-playbook-ansible.png)
 -![photo of successfull filebeat playbook](Images/kibana1.png)
 -![photo of successfull filebeat playbook](Images/kibana2.png)
 -![photo of successfull filebeat playbook](Images/kibana3.png)
