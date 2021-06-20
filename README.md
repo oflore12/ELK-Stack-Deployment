@@ -137,5 +137,10 @@ host: "10.1.0.4:5601" <----- change line #1806
 - [Use this yml file to create play book](https://github.com/oflore12/Cybersecurity_Project1/blob/main/Ansible/filebeat-playbook.yml)
 - save file
 - run 'ansible-playbook filebeat-playbook.yml
--![photo of successfull filebeat playbook](Images/Project1.png)
+-
+-![photo of successfull filebeat playbook](Images/filebeat-playbook ansible.png)
+-![photo of successfull filebeat playbook](Images/kibana1.png)
+-![photo of successfull filebeat playbook](Images/kibana2.png)
+-![photo of successfull filebeat playbook](Images/kibana3.png)
 
+Steps can be repeated for metricbeat the url to use for curl command is 'https://gist.githubusercontent.com/slape/58541585cc1886d2e26cd8be557ce04c/raw/0ce2c7e744c54513616966affb5e9d96f5e12f73/metricbeat'
