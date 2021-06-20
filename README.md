@@ -66,7 +66,7 @@ A summary of the access policies in place can be found in the table below.
 ### Elk Configuration
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
-- _TODO: What is the main advantage of automating configuration with Ansible? Main advantage is the flexibiliy behind it. A playbook can be customized on needs.
+- _TODO: What is the main advantage of automating configuration with Ansible? Main advantage is the flexibiliy behind it. A playbook can be customized based the needs of the server.
 
 The playbook implements the following tasks:
 - _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
@@ -88,24 +88,54 @@ The following screenshot displays the result of running `docker ps` after succes
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
 - _TODO: List the IP addresses of the machines you are monitoring_
+- 10.0.0.5
+- 10.0.0.6
 
 We have installed the following Beats on these machines:
 - _TODO: Specify which Beats you successfully installed_
+- filebeat
+- metricbeat
 
 These Beats allow us to collect the following information from each machine:
 - _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
+- Filebeat and metricbeat both collect data from the web servers created. Filebeat will log information of the file system, specially which files have been changed and when. Metricbeat collects metrics from the system and the services running on each server.
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the _____ file to _____.
-- Update the _____ file to include...
-- Run the playbook, and navigate to ____ to check that the installation worked as expected.
+- Copy the filebeat-config.yml file to files directory.
+- Update the filebeat-config.yml file to include the IP adress of the Elk VM
+- Run the playbook, and navigate to kibana to check that the installation worked as expected.
 
 _TODO: Answer the following questions to fill in the blanks:_
-- _Which file is the playbook? Where do you copy it?_
-- _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
-- _Which URL do you navigate to in order to check that the ELK server is running?
+- _Which file is the playbook? Where do you copy it? /etc/ansible/files/filebeat-config.yml, it gets copied to the /etc/filebeat/filebeat.yml
+- _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on? You run filebeat-playbook.yml to run Ansible on a specific machine, you specify the machine to install the playbook at the begining of YML document by specify the 'hosts'. Adding 'webservers' will install in the web-1 and web-2 servers and adding 'elk' will install on elk machine. In order to add group you have to edit the hosts file and add IP address to the machine that belongs in the group.
+- _Which URL do you navigate to in order to check that the ELK server is running? http://[ELK MACHINE PUBLIC IP ADDRESS]/app/kibana http://52.188.19.173:5601/app/kibana  
 
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
+- curl https://gist.githubusercontent.com/slape/5cc350109583af6cbe577bbcc0710c93/raw/eca603b72586fbe148c11f9c87bf96a63cb25760/Filebeat > filebeat-config.yml
+- nano filebeat-config.yml
+- update to include ELK server IP on line #1106 and #1806
+
+output.elasticsearch:
+hosts: ["10.1.0.4:9200"] <----- change line #1106
+
+username: "elastic"
+
+password: "changeme"
+
+
+
+
+setup.kibana:
+
+host: "10.1.0.4:5601" <----- change line #1806
+
+
+- nano filebeat-playbook.yml (should be in the files directory)
+- [Use this yml file to create play book](https://github.com/oflore12/Cybersecurity_Project1/blob/main/Ansible/filebeat-playbook.yml)
+- save file
+- run 'ansible-playbook filebeat-playbook.yml
+-![photo of successfull filebeat playbook](Images/Project1.png)
+
