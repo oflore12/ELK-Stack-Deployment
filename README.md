@@ -18,7 +18,7 @@ This document contains the following details:
 - ELK Configuration
   - Beats in Use
   - Machines Being Monitored
-- How to Use the Ansible Build
+- How to Use the Ansible Built
 
 
 ### Description of the Topology
@@ -27,11 +27,11 @@ The main purpose of this network is to expose a load-balanced and monitored inst
 
 Load balancing ensures that the application will be highly efficient, in addition to restricting DoS attacks to the network.
 - What aspect of security do load balancers protect? What is the advantage of a jump box?
-- The load balancer protects the availability aspect of security as it ensures that traffic is distributed across multiple servers and it can mitigate DoS attacks. The advantage of having a jump box is that their is an added layer of security for anyone trying to access the servers directly. Also it allows for easier manipulation of servers, configuration of all servers can be done from the jumpbox.
+The load balancer protects the availability aspect of security as it ensures that traffic is distributed across multiple servers and it can mitigate DoS attacks. The advantage of having a jump box is that there is an added layer of security for anyone trying to access the servers directly. Also, it allows for easier manipulation of servers and configuration of all servers can be done from the jumpbox.
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the jumpbox and system networks.
-- What does Filebeat watch for? Data about the file system
-- What does Metricbeat record? machine metrics
+- What does Filebeat watch for? Filebeat collects data about the file system. The log files collects are from those generated from Apache, Microsoft Azure tools, the Nginx web server and MYSQL databases. R
+- What does Metricbeat record? Metricbeat collects machine metrics, like uptime.
 
 The configuration details of each machine may be found below.
 _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
