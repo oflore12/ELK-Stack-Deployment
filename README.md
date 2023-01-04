@@ -1,4 +1,4 @@
-# Cybersecurity_Project1
+# Cybersecurity_Project
 Elk/Github Fundamentals
 ## Automated ELK Stack Deployment
 
