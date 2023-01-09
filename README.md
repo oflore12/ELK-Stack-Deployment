@@ -135,7 +135,7 @@ host: "10.1.0.4:5601" <----- change line #1806
 - This photo shows the successful filebeat playbook
 ![photo of successful filebeat playbook](Images/filebeat-playbook-ansible.png)
 
-- This photo shows the URL being used to check if filebeat is working proplery
+- This photo shows the URL being used to check if filebeat is working properly
 ![photo of filebeat playbook on kibana](Images/kibana1.png)
 
 - This photo shows the logs reported by the Filebeat playbook
