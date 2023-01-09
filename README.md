@@ -144,3 +144,5 @@ host: "10.1.0.4:5601" <----- change line #1806
 ![photo of successfull filebeat playbook](Images/kibana3.png)
 
 Steps can be repeated for metricbeat the url to use for curl command is 'https://gist.githubusercontent.com/slape/58541585cc1886d2e26cd8be557ce04c/raw/0ce2c7e744c54513616966affb5e9d96f5e12f73/metricbeat'
+
+[This project was worked on during enrollment to GW Cybersecurity Boot Camp Program 2021]
